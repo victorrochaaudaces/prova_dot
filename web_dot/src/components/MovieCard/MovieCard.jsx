@@ -1,11 +1,17 @@
-import "./MovieRow.css";
+import styles from "./MovieCard.module.css";
 
-function MovieRow({ title, items }) {
+function MovieCard({ items }) {
   return (
-    <div className="movieRow">
-      <h2>{title}</h2>
-      <div className="movieRow--listarea">
-        <div className="movieRow--list">
+    <div>
+      <div /*className="movieRow--listarea"*/ >
+        <div
+        //   className="movieRow--list"
+        //   style={{
+        //     marginLeft: scrollX,
+        //     // 150 é a largura de cada item
+        //     width: items.results.length * 150,
+        //   }}
+        >
           {items.results.length > 0 &&
             items.results.map((item, key) => (
               <div key={key} className="movieRow--item">
@@ -21,4 +27,4 @@ function MovieRow({ title, items }) {
   );
 }
 
-export default MovieRow;
+export default MovieCard;

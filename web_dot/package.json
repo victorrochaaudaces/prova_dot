@@ -1,5 +1,5 @@
 {
-  "name": "netflixclone",
+  "name": "web_dot",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -7,8 +7,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.3.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
