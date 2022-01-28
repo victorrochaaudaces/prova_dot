@@ -1,32 +1,21 @@
+import "./App.css";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-import MovieCard from "./components/MovieCard/MovieCard";
 import Navbar from "./components/navbar/Index";
-// import Home from "./components/pages/Home";
-import Tmdb from "./Tmdb";
+import Home from "./components/pages/Home";
+import Search from './components/pages/Search'
 
 function App() {
-  
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    const loadAllMovie = async () => {
-      let listMovie = await Tmdb.getMovie();
-      setMovies(listMovie);
-    };
-
-    loadAllMovie();
-  }, []);
-
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-     <section>
-        {movies.length > 0 &&
-          movies.map((item, key) => <MovieCard key={key} items={item.items} />)}
-      </section>
-    </div>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search/:id" element={<Search />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

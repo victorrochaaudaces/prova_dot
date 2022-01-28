@@ -12,10 +12,16 @@ const basicFetch = async (endpoint) => {
 
 export default {
   getMovie: async () => {
-    let movies = [];
-    movies = await basicFetch(
-      `/discover/movie?language=pt-BR&api_key=${API_KEY}`
-    );
-    return movies;
+    return [
+      {
+        slug: "movies",
+        items: await basicFetch(
+          `/discover/movie?language=pt-BR&api_key=${API_KEY}`
+        ),
+      },
+    ];
   },
+
+  API_KEY,
+  API_BASE
 };

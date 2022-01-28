@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import Tmdb from "../../Tmdb";
 import MovieCard from "../MovieCard/MovieCard";
+import { useParams } from "react-router-dom";
 
-function Home() {
+function Search() {
+const { id } = useParams();
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     fetch(
-      `${Tmdb.API_BASE}/discover/movie?language=pt-BR&api_key=${Tmdb.API_KEY}`,
+      `${Tmdb.API_BASE}/search/movie?with_title=%${id}%&language=pt-BR&api_key=${Tmdb.API_KEY}`,
       {
         method: "GET",
         headers: {
@@ -43,4 +45,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Search;

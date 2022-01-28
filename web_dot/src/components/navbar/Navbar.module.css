@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 header {
-    position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
     right: 0;
@@ -12,6 +10,7 @@ header {
     justify-content: space-between;
     transition: all ease .5s;
     background-color: #66cdaa;
+    margin-bottom: 10px;
 }
 
 .search {
@@ -41,7 +40,6 @@ header {
 
 .input::placeholder {
     color: #333;
-    font-weight: bold;
 }
 
 .input:focus {
@@ -80,7 +78,6 @@ header {
     font-size: 25px;
     font-weight: bold;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
 
